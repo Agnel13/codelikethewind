@@ -23,7 +23,7 @@ pipeline {
 
           // Add steps here
           openshift.withCluster() { 
-          openshift.withProject("jenkins") {
+          openshift.withProject("jenkins-devops") {
   
             def buildConfigExists = openshift.selector("bc", "codelikethewind").exists() 
     
@@ -43,7 +43,7 @@ pipeline {
 
           // Add steps here
              openshift.withCluster() { 
-  openshift.withProject("jenkins") { 
+  openshift.withProject("jenkins-devops") { 
     def deployment = openshift.selector("dc", "codelikethewind") 
     
     if(!deployment.exists()){ 
